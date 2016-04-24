@@ -18,7 +18,7 @@ primus.on 'connection', (spark) ->
     console.log 'connection start'
     spark.write 'hello connection'
     spark.on 'data', (data) ->
-        console.log "got data: #{data}"
+        console.log "got data: #{JSON.stringify(data)}"
 
 primus.on 'disconnection', (spark) ->
     console.log 'connection disconnected'
