@@ -1,0 +1,27 @@
+{
+  "name": "remote-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.coffee"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-loader": "0.7.2",
+    "coffee-script": "1.10.0",
+    "consolidate": "0.14.0",
+    "css-loader": "0.23.1",
+    "ect": "0.5.9",
+    "express": "4.13.4",
+    "primus": "5.1.0",
+    "style-loader": "0.13.1",
+    "ws": "1.1.0"
+  },
+  "devDependencies": {
+    "node-notifier": "4.5.0"
+  }
+}

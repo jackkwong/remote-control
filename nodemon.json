@@ -1,0 +1,8 @@
+{
+    "verbose": true,
+    "ignore": ["node_modules/*"],
+    "execMap": {
+        "coffee": "webpack && coffee",
+        "js": "webpack && node"
+    }
+}
