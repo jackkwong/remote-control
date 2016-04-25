@@ -1,6 +1,12 @@
 {
     "verbose": true,
     "ignore": ["node_modules/*"],
+    "events": {
+        "crash": "node -e \" require('node-notifier').notify({'title': 'Crash detected', 'message': new Date().toString()}) \"",
+        "exit": "node -e \" require('node-notifier').notify({'title': 'exited', 'message': new Date().toString()}) \"",
+        "restart": "node -e \" require('node-notifier').notify({'title': 'App restarted', 'message': new Date().toString()}) \"",
+        "start": "node -e \" require('node-notifier').notify({'title': 'App started', 'message': new Date().toString()}) \""
+    },
     "execMap": {
         "coffee": "webpack && coffee",
         "js": "webpack && node"
