@@ -3,10 +3,18 @@ Rx = require 'rx'
 
 primus = Primus.connect undefined, {manual: true}
 
-deviceOrientationSignal = Rx.Observable.create((o) ->
+deviceOrientation = Rx.Observable.create((o) ->
     window.addEventListener 'deviceorientation', (ev) ->
         o.onNext(ev)
-).map((ev) ->
+)
+
+timerSignal = Rx.Observable.interval(1000/30)
+
+deviceOrientationSignal = timerSignal.flatMap((time) ->
+    console.log time
+    return deviceOrientation.takeUntil(timerSignal.skip(1)).last(undefined, undefined, [])
+)
+.map((ev) ->
     {
         alpha: ev.alpha
         beta: ev.beta
